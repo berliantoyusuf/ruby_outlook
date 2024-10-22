@@ -97,8 +97,7 @@ module RubyOutlook
     def get_contacts(token, view_size, page, fields = nil, sort = nil, user = nil)
       request_url = "/v1.0/" << (user.nil? ? "me" : ("users/" << user)) << "/contacts"
       request_params = {
-        '$top' => view_size,
-        '$skip' => (page - 1) * view_size
+        '$top' => view_size
       }
 
       unless fields.nil?
@@ -188,8 +187,7 @@ module RubyOutlook
     def get_messages(token, view_size, page, fields = nil, sort = nil, user = nil)
       request_url = "/v1.0/" << (user.nil? ? "Me" : ("users/" << user)) << "/Messages"
       request_params = {
-        '$top' => view_size,
-        '$skip' => (page - 1) * view_size
+        '$top' => view_size
       }
 
       unless fields.nil?
@@ -215,8 +213,7 @@ module RubyOutlook
     def get_messages_for_folder(token, view_size, page, fields = nil, sort = nil, user = nil, folder_id)
       request_url = "/v1.0/" << (user.nil? ? "Me" : ("users/" << user)) << "/MailFolders/#{folder_id}/messages"
       request_params = {
-        '$top' => view_size,
-        '$skip' => (page - 1) * view_size
+        '$top' => view_size
       }
 
       unless fields.nil?
@@ -325,8 +322,7 @@ module RubyOutlook
     def get_events(token, view_size, page, fields = nil, sort = nil, user = nil)
       request_url = "/v1.0/" << (user.nil? ? "Me" : ("users/" << user)) << "/Events"
       request_params = {
-        '$top' => view_size,
-        '$skip' => (page - 1) * view_size
+        '$top' => view_size
       }
 
       unless fields.nil?
